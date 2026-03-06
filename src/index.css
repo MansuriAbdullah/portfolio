@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cursor-size: 20px;
+}
+
+body {
+  cursor: none;
+  background-color: #0F172A;
+  /* Dark background */
+  color: #F8FAFC;
+  /* Light text */
+  overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border: 1px solid #3B82F6;
+  /* Brand Blue */
+  background-color: rgba(59, 130, 246, 0.2);
+  /* Slight tint */
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  /* Glow */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+  mix-blend-mode: screen;
+  /* Blend nicely with dark bg */
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #FBBF24;
+  /* Gold on hover */
+  mix-blend-mode: normal;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+  /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  /* Slate thumb */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5563;
+  /* Lighter thumb on hover */
+}
