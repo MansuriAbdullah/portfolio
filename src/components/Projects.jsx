@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Zap, Layers } from 'lucide-react';
 
 const projects = [
@@ -57,7 +56,7 @@ const projects = [
         description: "Smart Seller management platform designed to help sellers manage products and workflows with a modern dashboard-style UI.",
         techStack: ["MERN", "Dashboard UI", "Full-Stack Logic"],
         image: "/images/smart_seller_bg.png",
-        link: "https://smartseller-6981.vercel.app/"
+        link: "https://smartseller.vercel.app/"
     },
     {
         title: "Baba Perfume",
@@ -72,56 +71,15 @@ const projects = [
 const ProjectCard = ({ project, index }) => {
     const ref = useRef(null);
 
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const mouseXSpring = useSpring(x);
-    const mouseYSpring = useSpring(y);
-
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
-
-    const handleMouseMove = (e) => {
-        const rect = ref.current.getBoundingClientRect();
-
-        const width = rect.width;
-        const height = rect.height;
-
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        const xPct = mouseX / width - 0.5;
-        const yPct = mouseY / height - 0.5;
-
-        x.set(xPct);
-        y.set(yPct);
-    };
-
-    const handleMouseLeave = () => {
-        x.set(0);
-        y.set(0);
-    };
-
     return (
-        <motion.div
+        <div
             ref={ref}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-            }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group relative w-full rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 transform-gpu"
         >
             {/* Live Badge */}
             <div className="absolute top-4 right-4 z-30">
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 rounded-full text-white text-[10px] font-bold shadow-sm hover:scale-105 transition-transform">
                     <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
                     LIVE
@@ -142,14 +100,13 @@ const ProjectCard = ({ project, index }) => {
                     <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.2em] flex items-center gap-1.5">
                         <Zap size={10} className="text-gold-400" /> {project.category}
                     </span>
-                    <motion.a
+                    <a
                         href={project.link}
                         target="_blank"
-                        whileHover={{ scale: 1.1, rotate: 15 }}
                         className="p-2 bg-white/5 rounded-full border border-white/10 text-white hover:text-gold-400 hover:border-gold-400 transition-colors"
                     >
                         <ExternalLink size={16} />
-                    </motion.a>
+                    </a>
                 </div>
 
                 <h3 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-gold-400 transition-colors">
@@ -182,7 +139,7 @@ const ProjectCard = ({ project, index }) => {
                     </a>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
@@ -190,36 +147,28 @@ const Projects = () => {
     return (
         <section id="projects" className="py-32 relative overflow-hidden bg-transparent">
             {/* Background elements */}
-            <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[150px] -z-10 animate-pulse"></div>
+            <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[150px] -z-10"></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col items-center mb-24 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                    <div
                         className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6"
                     >
                         <Layers size={14} className="text-gold-400" />
                         <span className="text-gold-400 font-bold text-xs uppercase tracking-[0.2em]">Crafted Experience</span>
-                    </motion.div>
+                    </div>
 
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
+                    <h2
                         className="text-4xl md:text-7xl font-serif font-black text-white mb-8 tracking-tight"
                     >
                         Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600">Creations</span>
-                    </motion.h2>
+                    </h2>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
+                    <p
                         className="text-gray-400 max-w-2xl text-lg md:text-xl font-light leading-relaxed mx-auto italic"
                     >
                         "Turning complex ideas into interactive, scalable digital reality."
-                    </motion.p>
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 perspective-2000">

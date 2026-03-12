@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-
 const Contact = () => {
     return (
         <section id="contact" className="py-24 relative overflow-hidden bg-transparent">
@@ -10,11 +8,7 @@ const Contact = () => {
 
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
 
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                <div
                 >
                     <span className="text-gold-400 font-sans tracking-widest text-sm font-bold uppercase mb-2">Connect</span>
                     <h2 className="text-4xl md:text-6xl font-serif text-white font-bold mb-8">Start a <span className="text-gold-400">Conversation</span></h2>
@@ -23,9 +17,8 @@ const Contact = () => {
                     </p>
 
                     <div className="space-y-6">
-                        <motion.a
+                        <a
                             href="mailto:mansuri7573@gmail.com"
-                            whileHover={{ x: 10 }}
                             className="flex items-center gap-6 group cursor-pointer"
                         >
                             <div className="w-14 h-14 bg-white/5 border border-white/10 text-gold-400 flex items-center justify-center rounded-2xl group-hover:bg-gold-500 group-hover:text-[#020617] transition-all duration-300 shadow-xl">@</div>
@@ -33,12 +26,11 @@ const Contact = () => {
                                 <h4 className="font-bold text-white text-lg">Email</h4>
                                 <p className="text-gray-400">mansuri7573@gmail.com</p>
                             </div>
-                        </motion.a>
+                        </a>
 
-                        <motion.a
+                        <a
                             href="https://wa.me/917573054279"
                             target="_blank"
-                            whileHover={{ x: 10 }}
                             className="flex items-center gap-6 group cursor-pointer"
                         >
                             <div className="w-14 h-14 bg-white/5 border border-white/10 text-gold-400 flex items-center justify-center rounded-2xl group-hover:bg-gold-500 group-hover:text-[#020617] transition-all duration-300 shadow-xl">
@@ -48,12 +40,11 @@ const Contact = () => {
                                 <h4 className="font-bold text-white text-lg">WhatsApp</h4>
                                 <p className="text-gray-400">+91 75730 54279</p>
                             </div>
-                        </motion.a>
+                        </a>
 
-                        <motion.a
+                        <a
                             href="https://www.linkedin.com/in/abdullah-mansuri-b8a9681a0?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                             target="_blank"
-                            whileHover={{ x: 10 }}
                             className="flex items-center gap-6 group cursor-pointer"
                         >
                             <div className="w-14 h-14 bg-white/5 border border-white/10 text-gold-400 flex items-center justify-center rounded-2xl group-hover:bg-gold-500 group-hover:text-[#020617] transition-all duration-300 shadow-xl">in</div>
@@ -61,44 +52,39 @@ const Contact = () => {
                                 <h4 className="font-bold text-white text-lg">LinkedIn</h4>
                                 <p className="text-gray-400">Abdullah Mansuri</p>
                             </div>
-                        </motion.a>
+                        </a>
                     </div>
-                </motion.div>
+                </div>
 
-                <motion.form
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
+                <form
                     className="space-y-6"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <motion.input
+                        <input
                             type="text" placeholder="Name"
                             className="w-full bg-white/5 backdrop-blur-md border border-white/10 p-5 focus:outline-none focus:border-gold-400 text-white transition-all rounded-2xl hover:bg-white/10"
                         />
-                        <motion.input
+                        <input
                             type="email" placeholder="Email"
                             className="w-full bg-white/5 backdrop-blur-md border border-white/10 p-5 focus:outline-none focus:border-gold-400 text-white transition-all rounded-2xl hover:bg-white/10"
                         />
                     </div>
-                    <motion.input
+                    <input
                         type="text" placeholder="Subject"
                         className="w-full bg-white/5 backdrop-blur-md border border-white/10 p-5 focus:outline-none focus:border-gold-400 text-white transition-all rounded-2xl hover:bg-white/10"
                     />
-                    <motion.textarea
+                    <textarea
                         rows="4" placeholder="How can I help you?"
                         className="w-full bg-white/5 backdrop-blur-md border border-white/10 p-5 focus:outline-none focus:border-gold-400 text-white transition-all rounded-2xl hover:bg-white/10 resize-none"
-                    ></motion.textarea>
+                    ></textarea>
 
-                    <motion.button
-                        whileHover={{ scale: 1.02, boxShadow: "0px 20px 40px rgba(245, 158, 11, 0.2)" }}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-[#020617] py-5 rounded-2xl font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-2xl"
+                    <button
+                        className="hover:scale-105 active:scale-95 w-full bg-gradient-to-r from-gold-500 to-gold-600 text-[#020617] py-5 rounded-2xl font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-2xl"
                     >
                         Send Perspective
-                        <span className="block w-2 h-2 bg-[#020617] rounded-full animate-pulse"></span>
-                    </motion.button>
-                </motion.form>
+                        <span className="block w-2 h-2 bg-[#020617] rounded-full"></span>
+                    </button>
+                </form>
 
             </div>
         </section>
