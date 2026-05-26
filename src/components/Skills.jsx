@@ -32,15 +32,15 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-24 relative overflow-hidden bg-transparent">
+        <section id="skills" className="py-20 md:py-32 relative overflow-hidden bg-transparent">
             {/* Dynamic background element */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gold-400/5 rounded-full blur-[180px] -z-10"></div>
 
             <div className="container mx-auto px-6 relative z-10">
 
-                <div className="flex flex-col items-center mb-24 text-center">
+                <div className="flex flex-col items-center mb-16 md:mb-24 text-center">
                     <span className="text-gold-400 font-sans tracking-[0.5em] text-xs font-black uppercase mb-4">Core Ecosystem</span>
-                    <h2 className="text-4xl md:text-7xl font-serif text-white font-black mb-8 italic tracking-tighter">Technical Capabilities</h2>
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white font-black mb-6 md:mb-8 italic tracking-tighter">Technical Capabilities</h2>
                     <p className="text-gray-500 max-w-2xl text-lg font-light leading-relaxed">
                         A detailed breakdown of my technical arsenal, engineered for <br className="hidden md:block" />
                         <span className="text-white font-medium">performance, scalability, and impact</span>.

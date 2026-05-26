@@ -51,17 +51,17 @@ const journeyData = [
 
 const Experience = () => {
     return (
-        <section id="experience" className="py-32 bg-transparent relative overflow-hidden">
+        <section id="experience" className="py-20 md:py-32 bg-transparent relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] pointer-events-none -z-10 bg-cover bg-center" style={{ backgroundImage: 'url("/images/journey_bg.png")' }}></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-400/5 rounded-full blur-[150px] -z-10"></div>
             
             <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center mb-32 text-center">
+                <div className="flex flex-col items-center mb-16 md:mb-32 text-center">
                     <div className="px-4 py-1.5 bg-gold-400/10 border border-gold-400/20 rounded-full mb-6">
                         <span className="text-gold-400 font-sans tracking-[0.3em] text-[10px] font-black uppercase">Professional Path</span>
                     </div>
-                    <h2 className="text-4xl md:text-7xl font-serif text-white font-black tracking-tighter mb-8 italic">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white font-black tracking-tighter mb-8 italic">
                         Academic & <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600">Experience</span>
                     </h2>
                     <p className="text-gray-500 max-w-xl text-lg font-light leading-relaxed font-sans italic">
@@ -73,7 +73,7 @@ const Experience = () => {
                     {/* Center Line (hidden on small) */}
                     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block"></div>
 
-                    <div className="space-y-24">
+                    <div className="space-y-12 md:space-y-24">
                         {journeyData.map((item, index) => (
                             <div key={index} className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                                 {/* Connector Dot */}
@@ -83,7 +83,7 @@ const Experience = () => {
 
                                 {/* Content Card */}
                                 <div className={`w-full md:w-[45%] group ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
-                                    <div className="relative p-8 rounded-[2.5rem] bg-white/5 backdrop-blur-3xl border border-white/10 transition-all duration-500 hover:bg-white/10 hover:border-gold-400/30 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] cursor-default">
+                                    <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-white/5 backdrop-blur-3xl border border-white/10 transition-all duration-500 hover:bg-white/10 hover:border-gold-400/30 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] cursor-default">
                                         <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.color} text-white mb-6 shadow-xl`}>
                                             <item.icon size={24} />
                                         </div>

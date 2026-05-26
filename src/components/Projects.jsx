@@ -65,6 +65,22 @@ const projects = [
         techStack: ["MERN", "Full-Stack", "UI/UX"],
         image: "/images/baba_perfume_bg.png",
         link: "https://baba-perfumes.vercel.app/"
+    },
+    {
+        title: "MDFlowers",
+        category: "Floral / Wholesale",
+        description: "A comprehensive B2B & B2C florist and flower manufacturing platform. It supports bulk wholesale distribution, retail sales, order tracking, and automated inventory management.",
+        techStack: ["MERN Stack", "React", "Redux", "Tailwind CSS", "Inventory System"],
+        image: "/images/mdflowers_bg.png",
+        link: "https://mdflowers.in"
+    },
+    {
+        title: "MDFarm",
+        category: "Events / Booking",
+        description: "A luxury wedding and event venue booking platform. It features an interactive scheduling calendar, custom package configurations, real-time availability checks, and client CRM management.",
+        techStack: ["React", "Node.js", "Express", "MongoDB", "Booking Engine"],
+        image: "/images/mdfarm_bg.png",
+        link: "https://mdfarm.in"
     }
 ];
 
@@ -86,7 +102,7 @@ const ProjectCard = ({ project, index }) => {
                 </a>
             </div>
 
-            <div className="relative h-60 overflow-hidden rounded-t-3xl bg-[#020617]/50">
+            <div className="relative h-48 md:h-60 overflow-hidden rounded-t-[2rem] md:rounded-t-3xl bg-[#020617]/50">
                 {/* Scrolling Image Effect */}
                 <div
                     className="w-full h-full bg-cover bg-top transition-[background-position] duration-[4000ms] ease-linear group-hover:bg-bottom"
@@ -95,7 +111,7 @@ const ProjectCard = ({ project, index }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
             </div>
 
-            <div className="p-8 relative z-20 h-full">
+            <div className="p-6 md:p-8 relative z-20 h-full">
                 <div className="flex items-center justify-between mb-4">
                     <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.2em] flex items-center gap-1.5">
                         <Zap size={10} className="text-gold-400" /> {project.category}
@@ -145,12 +161,12 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-32 relative overflow-hidden bg-transparent">
+        <section id="projects" className="py-20 md:py-32 relative overflow-hidden bg-transparent">
             {/* Background elements */}
             <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[150px] -z-10"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center mb-24 text-center">
+                <div className="flex flex-col items-center mb-12 md:mb-24 text-center">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6"
                     >
@@ -159,7 +175,7 @@ const Projects = () => {
                     </div>
 
                     <h2
-                        className="text-4xl md:text-7xl font-serif font-black text-white mb-8 tracking-tight"
+                        className="text-4xl sm:text-5xl md:text-7xl font-serif font-black text-white mb-6 md:mb-8 tracking-tight"
                     >
                         Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600">Creations</span>
                     </h2>
